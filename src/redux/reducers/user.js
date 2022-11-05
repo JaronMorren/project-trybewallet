@@ -1,11 +1,11 @@
-// Esse reducer será responsável por tratar as informações da pessoa usuária
-const INITIALSTATE = {
-  email: '', // string que armazena o email da pessoa usuária
+// This reducer deals with user related data
+const INITIAL_STATE = {
+  email: '', // string that stores user's email address
 };
 
-const user = (state = initialState, action) => {
+const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case 'VALID_USER':
+  case 'USER_INFORMATION':
     return ({ email: action.email });
   default:
     return state;
