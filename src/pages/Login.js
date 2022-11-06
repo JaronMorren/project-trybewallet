@@ -91,8 +91,8 @@ class Login extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  email: state.user.email,
+const mapStateToProps = (globalState) => ({
+  email: globalState.user.email,
 });
 
 Login.propTypes = {
