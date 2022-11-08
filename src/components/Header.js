@@ -9,13 +9,14 @@ class Header extends Component {
       <header>
         <h1>Wallet</h1>
         <div data-testid="email-field">
+          Email:
           { email }
         </div>
         <div data-testid="total-field">
-          0
+          Total: 0
         </div>
         <div data-testid="header-currency-field">
-          BRL
+          Currency: BRL
         </div>
       </header>
     );
