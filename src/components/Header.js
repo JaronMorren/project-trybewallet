@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+// https://javascript.plainenglish.io/create-a-currency-converter-in-react-7e67ac290c39
 class Header extends Component {
   render() {
     const { email, expenses } = this.props;
