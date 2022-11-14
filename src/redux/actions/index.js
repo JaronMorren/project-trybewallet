@@ -5,6 +5,7 @@ export const REQUEST_API = 'REQUEST_API';
 export const REQUEST_API_SUCCESS = 'REQUEST_API_SUCCESS';
 export const REQUEST_API_ERROR = 'REQUEST_API_ERROR';
 export const ADD_EXPENSES = 'ADD_EXPENSES';
+export const REMOVE_EXPENSES = 'REMOVE_EXPENSES';
 
 export const userInformationAction = (payload) => ({
   type: USER_INFORMATION,
@@ -50,3 +51,8 @@ export const getExchangeRates = () => async (dispatch) => {
 };
 
 export const actionFetchCurrency = () => fetchCurrency;
+
+export const removeExpenses = (id) => ({
+  type: REMOVE_EXPENSES,
+  id,
+});

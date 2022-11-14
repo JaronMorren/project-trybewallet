@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeExpenses } from '../redux/actions';
 
 // https://www.geeksforgeeks.org/how-to-build-an-html-table-using-reactjs-from-arrays/
 class Table extends Component {
+  removeExpenses = (id) => {
+    const { dispatch } = this.props;
+    dispatch(removeExpenses(id));
+  };
+
   render() {
     const { expenses } = this.props;
     return (
@@ -39,6 +45,16 @@ class Table extends Component {
                 * element.exchangeRates[element.currency].ask).toFixed(2))}
               </td>
               <td>BRL</td>
+              <td>
+                <button
+                  type="button"
+                  data-testid="delete-btn"
+                  onClick={ () => this.removeExpenses(element.id) }
+                >
+                  Remove Expenses
+
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -55,6 +71,7 @@ Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
   })).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(Table);

@@ -3,7 +3,8 @@
 // https://dev.to/cyberwolves/how-to-call-apis-in-react-redux-3f9k
 
 import {
-  REQUEST_API, REQUEST_API_SUCCESS, REQUEST_API_ERROR, ADD_EXPENSES } from '../actions';
+  REQUEST_API, REQUEST_API_SUCCESS, REQUEST_API_ERROR,
+  ADD_EXPENSES, REMOVE_EXPENSES } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -32,6 +33,13 @@ const wallet = (state = INITIAL_STATE, action) => {
         ...state.expenses,
         action.payload],
     });
+  case REMOVE_EXPENSES:
+    return {
+      ...state,
+      expenses: state.expenses.length === 1
+        ? INITIAL_STATE.expenses
+        : state.expenses.filter((element) => (element.id !== action.id)),
+    };
   default:
     return state;
   }
