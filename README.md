@@ -1,5 +1,9 @@
 Project Trybewallet
 
+🛠 Skills
+
+Javascript, React, HTML&CSS
+
 This is a project developed as part of the Trybe Web Development Course curriculum. The project consists of a web application for managing personal finances, allowing users to register transactions and track their spending over time.
 
 The application was built using React and Redux, and uses an API to fetch exchange rates and currency conversion data. It includes a registration and login system, and allows users to add, remove and edit transactions, as well as visualize their spending in various formats such as charts and tables.
